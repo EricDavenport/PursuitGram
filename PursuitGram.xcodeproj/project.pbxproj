@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5854A3872415A97C001EE3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3862415A97C001EE3FC /* GoogleService-Info.plist */; };
+		58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */; };
 		58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */; };
 		58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */; };
-		58F39CFA241560AB00D6C1C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF9241560AB00D6C1C6 /* ViewController.swift */; };
+		58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF9241560AB00D6C1C6 /* LogInViewController.swift */; };
 		58F39CFD241560AB00D6C1C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F39CFB241560AB00D6C1C6 /* Main.storyboard */; };
 		58F39CFF241560AC00D6C1C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F39CFE241560AC00D6C1C6 /* Assets.xcassets */; };
 		58F39D02241560AC00D6C1C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F39D00241560AC00D6C1C6 /* LaunchScreen.storyboard */; };
@@ -31,10 +33,12 @@
 /* Begin PBXFileReference section */
 		2D5678D8FB677B4312E99746 /* Pods_PursuitGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PursuitGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D2D6D15956613D86C14673 /* Pods-PursuitGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitGram/Pods-PursuitGram.release.xcconfig"; sourceTree = "<group>"; };
+		5854A3862415A97C001EE3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		58F39CF2241560AB00D6C1C6 /* PursuitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PursuitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58F39CF9241560AB00D6C1C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		58F39CF9241560AB00D6C1C6 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		58F39CFC241560AB00D6C1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58F39CFE241560AC00D6C1C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58F39D01241560AC00D6C1C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5854A3882415AA5E001EE3FC /* Log In */ = {
+			isa = PBXGroup;
+			children = (
+				58F39CF9241560AB00D6C1C6 /* LogInViewController.swift */,
+			);
+			path = "Log In";
+			sourceTree = "<group>";
+		};
+		58D8ED572415A6010086DA59 /* Firebase Services */ = {
+			isa = PBXGroup;
+			children = (
+				58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */,
+			);
+			path = "Firebase Services";
+			sourceTree = "<group>";
+		};
 		58F39CE9241560AB00D6C1C6 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +120,14 @@
 		58F39CF4241560AB00D6C1C6 /* PursuitGram */ = {
 			isa = PBXGroup;
 			children = (
+				58D8ED572415A6010086DA59 /* Firebase Services */,
+				5854A3882415AA5E001EE3FC /* Log In */,
 				58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */,
 				58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */,
-				58F39CF9241560AB00D6C1C6 /* ViewController.swift */,
 				58F39CFB241560AB00D6C1C6 /* Main.storyboard */,
 				58F39CFE241560AC00D6C1C6 /* Assets.xcassets */,
 				58F39D00241560AC00D6C1C6 /* LaunchScreen.storyboard */,
+				5854A3862415A97C001EE3FC /* GoogleService-Info.plist */,
 				58F39D03241560AC00D6C1C6 /* Info.plist */,
 			);
 			path = PursuitGram;
@@ -128,7 +150,6 @@
 				9D8FC139BE63979306DAA662 /* Pods-PursuitGramTests.debug.xcconfig */,
 				88804EE55562E8C46D011FB5 /* Pods-PursuitGramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58F39D02241560AC00D6C1C6 /* LaunchScreen.storyboard in Resources */,
+				5854A3872415A97C001EE3FC /* GoogleService-Info.plist in Resources */,
 				58F39CFF241560AC00D6C1C6 /* Assets.xcassets in Resources */,
 				58F39CFD241560AB00D6C1C6 /* Main.storyboard in Resources */,
 			);
@@ -300,8 +322,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58F39CFA241560AB00D6C1C6 /* ViewController.swift in Sources */,
+				58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */,
 				58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */,
+				58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */,
 				58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
