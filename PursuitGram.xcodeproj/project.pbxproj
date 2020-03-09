@@ -10,11 +10,14 @@
 		5854A3872415A97C001EE3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3862415A97C001EE3FC /* GoogleService-Info.plist */; };
 		5854A38A2415B5CF001EE3FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3892415B5CF001EE3FC /* Main.storyboard */; };
 		5854A38D2415DE98001EE3FC /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */; };
-		5854A3902415E089001EE3FC /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38F2415E089001EE3FC /* SettingViewController.swift */; };
+		5854A3902415E089001EE3FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38F2415E089001EE3FC /* ProfileViewController.swift */; };
 		5854A3922415E181001EE3FC /* mainFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A3912415E181001EE3FC /* mainFeedCell.swift */; };
 		5854A3952415E6B8001EE3FC /* UIViewControllers+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */; };
 		58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */; };
 		58E2C5CE24160A7300FB5981 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E2C5CD24160A7300FB5981 /* TabBarController.swift */; };
+		58E58FDA2416841300DB61AD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FD92416841300DB61AD /* UIImage+Extensions.swift */; };
+		58E58FDC2416870200DB61AD /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */; };
+		58E58FDE2416889000DB61AD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */; };
 		58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */; };
 		58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */; };
 		58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF9241560AB00D6C1C6 /* LogInViewController.swift */; };
@@ -42,11 +45,14 @@
 		5854A3862415A97C001EE3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5854A3892415B5CF001EE3FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
-		5854A38F2415E089001EE3FC /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5854A38F2415E089001EE3FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5854A3912415E181001EE3FC /* mainFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFeedCell.swift; sourceTree = "<group>"; };
 		5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Navigation.swift"; sourceTree = "<group>"; };
 		58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		58E2C5CD24160A7300FB5981 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		58E58FD92416841300DB61AD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		58F39CF2241560AB00D6C1C6 /* PursuitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PursuitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +120,7 @@
 		5854A38E2415E06B001EE3FC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				5854A38F2415E089001EE3FC /* SettingViewController.swift */,
+				5854A38F2415E089001EE3FC /* ProfileViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -126,7 +132,6 @@
 				58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */,
 				58F39CFE241560AC00D6C1C6 /* Assets.xcassets */,
 				58F39D00241560AC00D6C1C6 /* LaunchScreen.storyboard */,
-				5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */,
 				58E2C5CD24160A7300FB5981 /* TabBarController.swift */,
 			);
 			path = "Supporting Files";
@@ -138,6 +143,17 @@
 				58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */,
 			);
 			path = "Firebase Services";
+			sourceTree = "<group>";
+		};
+		58E58FD8241683CE00DB61AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */,
+				58E58FD92416841300DB61AD /* UIImage+Extensions.swift */,
+				58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */,
+				58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		58F39CE9241560AB00D6C1C6 = {
@@ -169,6 +185,7 @@
 				58D8ED572415A6010086DA59 /* Firebase Services */,
 				5854A3882415AA5E001EE3FC /* Log In */,
 				5854A3932415E656001EE3FC /* Supporting Files */,
+				58E58FD8241683CE00DB61AD /* Extensions */,
 				5854A3862415A97C001EE3FC /* GoogleService-Info.plist */,
 				58F39D03241560AC00D6C1C6 /* Info.plist */,
 			);
@@ -366,14 +383,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5854A3952415E6B8001EE3FC /* UIViewControllers+Navigation.swift in Sources */,
+				58E58FDC2416870200DB61AD /* UIViewController+Alerts.swift in Sources */,
 				5854A3922415E181001EE3FC /* mainFeedCell.swift in Sources */,
 				58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */,
 				58E2C5CE24160A7300FB5981 /* TabBarController.swift in Sources */,
 				5854A38D2415DE98001EE3FC /* MainFeedViewController.swift in Sources */,
+				58E58FDE2416889000DB61AD /* UIImageView+Extensions.swift in Sources */,
 				58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */,
 				58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */,
+				58E58FDA2416841300DB61AD /* UIImage+Extensions.swift in Sources */,
 				58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */,
-				5854A3902415E089001EE3FC /* SettingViewController.swift in Sources */,
+				5854A3902415E089001EE3FC /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

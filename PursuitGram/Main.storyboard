@@ -121,7 +121,7 @@
         <!--Settings-->
         <scene sceneID="auk-Ws-K0n">
             <objects>
-                <viewController id="j2H-j9-oPy" customClass="SettingViewController" customModule="PursuitGram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j2H-j9-oPy" customClass="ProfileViewController" customModule="PursuitGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8xt-HB-lyD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="pencil.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="j2H-j9-oPy" eventType="touchUpInside" id="HnC-bj-Rb6"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="update email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsM-28-Cej">
                                 <rect key="frame" x="35" y="431" width="344" height="34"/>
@@ -147,7 +150,7 @@
                                 <rect key="frame" x="173" y="575" width="68" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
-                                    <action selector="updateButtonPreeesd:" destination="j2H-j9-oPy" eventType="touchUpInside" id="l0n-Si-VTs"/>
+                                    <action selector="updateButtonPressed:" destination="j2H-j9-oPy" eventType="touchUpInside" id="l0n-Si-VTs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentEmail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upV-6E-6GH">
@@ -164,6 +167,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsE-7C-BoD">
+                                <rect key="frame" x="177" y="769" width="60" height="30"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutButtonPressed:" destination="j2H-j9-oPy" eventType="touchUpInside" id="Ves-1F-ByB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -175,6 +185,7 @@
                             <constraint firstItem="SsM-28-Cej" firstAttribute="leading" secondItem="upV-6E-6GH" secondAttribute="leading" id="AXl-mP-1RC"/>
                             <constraint firstItem="UCA-U5-h0D" firstAttribute="leading" secondItem="6hs-4t-8w1" secondAttribute="leading" constant="291" id="JnQ-Wm-a38"/>
                             <constraint firstItem="Aqu-Q0-TVl" firstAttribute="leading" secondItem="6hs-4t-8w1" secondAttribute="leading" constant="173" id="MJP-7m-2G1"/>
+                            <constraint firstItem="6hs-4t-8w1" firstAttribute="bottom" secondItem="XsE-7C-BoD" secondAttribute="bottom" constant="14" id="Pgf-sz-4dJ"/>
                             <constraint firstItem="upV-6E-6GH" firstAttribute="top" secondItem="SsM-28-Cej" secondAttribute="bottom" constant="8" id="byd-O8-Q1I"/>
                             <constraint firstItem="upV-6E-6GH" firstAttribute="centerX" secondItem="Aqu-Q0-TVl" secondAttribute="centerX" id="eBh-Qp-ljG"/>
                             <constraint firstItem="rdz-GW-LLb" firstAttribute="top" secondItem="6hs-4t-8w1" secondAttribute="top" constant="69" id="gJv-mC-Hna"/>
@@ -183,6 +194,7 @@
                             <constraint firstItem="rdz-GW-LLb" firstAttribute="leading" secondItem="6hs-4t-8w1" secondAttribute="leading" constant="87" id="unZ-kO-l9m"/>
                             <constraint firstItem="rdz-GW-LLb" firstAttribute="centerX" secondItem="8xt-HB-lyD" secondAttribute="centerX" id="vd3-3y-Smw"/>
                             <constraint firstItem="SsM-28-Cej" firstAttribute="centerY" secondItem="8xt-HB-lyD" secondAttribute="centerY" id="x0d-Xg-jCj"/>
+                            <constraint firstItem="XsE-7C-BoD" firstAttribute="centerX" secondItem="Aqu-Q0-TVl" secondAttribute="centerX" id="xEO-IJ-sQr"/>
                             <constraint firstItem="6hs-4t-8w1" firstAttribute="trailing" secondItem="UCA-U5-h0D" secondAttribute="trailing" constant="68" id="xcf-cu-WbU"/>
                             <constraint firstItem="rdz-GW-LLb" firstAttribute="centerX" secondItem="SsM-28-Cej" secondAttribute="centerX" id="yto-TD-2SC"/>
                             <constraint firstItem="hSU-6p-Jds" firstAttribute="trailing" secondItem="SsM-28-Cej" secondAttribute="trailing" id="yxP-us-mJb"/>
@@ -197,6 +209,7 @@
                         <outlet property="emailTextField" destination="SsM-28-Cej" id="36L-8b-0BZ"/>
                         <outlet property="updateButton" destination="Aqu-Q0-TVl" id="AdM-G2-nNH"/>
                         <outlet property="userImageView" destination="rdz-GW-LLb" id="Y7h-Se-tzt"/>
+                        <outlet property="usernameTextField" destination="hSU-6p-Jds" id="Sbq-hH-cA5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I94-l5-BAj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
