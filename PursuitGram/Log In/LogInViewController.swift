@@ -75,6 +75,7 @@ class LogInViewController: UIViewController {
           print("Error signing in existing user: \(error)")
         case .success(let data):
           print("It works: New User accepted\(data.user.email ?? "")")
+          self.navigateToTabView()
         }
       }
     } else {
@@ -84,9 +85,14 @@ class LogInViewController: UIViewController {
           print("error creating new user: \(error)")
         case .success(let data):
           print("It works - new user crested: welcome \(data.user.email ?? "")")
+          self.navigateToTabView()
         }
       }
     }
+  }
+  
+  private func navigateToTabView() {
+    UIViewController.showViewController(storyboardName: "Main", viewControllerId: "TabBarController")
   }
   
   
