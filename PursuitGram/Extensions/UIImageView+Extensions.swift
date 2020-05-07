@@ -11,7 +11,7 @@ import UIKit
 extension UIImageView {
   
   func roundView() {
-    self.layer.cornerRadius = self.frame.height / 2
+    self.layer.cornerRadius = 40.0
     self.layer.borderWidth = 1
     self.layer.borderColor = UIColor.black.cgColor
     self.layer.masksToBounds = false

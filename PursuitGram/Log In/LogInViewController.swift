@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 enum AccountState {
   case existingUser
@@ -22,12 +23,14 @@ class LogInViewController: UIViewController {
   
   @IBOutlet weak var loginButton: UIButton!
   
+  @IBOutlet weak var loginLabel: UILabel!
   @IBOutlet weak var createAccountButton: UIButton!
-  @IBOutlet weak var buttonStack: UIStackView!
+
   
   private var accountState : AccountState = .existingUser
   
   private var authSession = AuthenticationSession()
+  private var db = DatabaseService()
   
   
   override func viewDidLoad() {
@@ -56,12 +59,15 @@ class LogInViewController: UIViewController {
     let duration : TimeInterval = 1.0
     
     if accountState == .existingUser {
-      UIView.transition(with: buttonStack, duration: duration, options: [.transitionCrossDissolve], animations: {
-        self.createAccountButton.setTitle("Login", for: .normal)
+      UIView.transition(with: loginLabel, duration: duration, options: [.transitionCrossDissolve], animations: {
+        self.loginButton.setTitle("Sign in", for: .normal)
+        self.loginLabel.text = "New User?"
+        
       }, completion: nil)
     } else {
-      UIView.transition(with: buttonStack, duration: duration, options: [.transitionCrossDissolve], animations: {
-        self.createAccountButton.setTitle("Sign Up", for: .normal)
+      UIView.transition(with: loginLabel, duration: duration, options: [.transitionCrossDissolve], animations: {
+        self.loginButton.setTitle("Create Account", for: .normal)
+        self.loginLabel.text = "Already have an account?"
       }, completion: nil)
     }
     
@@ -69,23 +75,26 @@ class LogInViewController: UIViewController {
   
   private func continueLogInFlow(email: String, password: String) {
     if accountState == .existingUser {
-      authSession.signInExistingUser(email: email, password: password) { (result) in
+      authSession.signInExistingUser(email: email, password: password) { [weak self] (result) in
         switch result {
         case .failure(let error):
           print("Error signing in existing user: \(error)")
         case .success(let data):
           print("It works: New User accepted\(data.user.email ?? "")")
-          self.navigateToTabView()
+          print("account state login flow = \(self!.accountState)")
+
+          self?.navigateToTabView()
         }
       }
     } else {
-      authSession.createNewUser(email: email, password: password) { (result) in
+      authSession.createNewUser(email: email, password: password) { [weak self] (result) in
         switch result {
         case .failure(let error):
           print("error creating new user: \(error)")
         case .success(let data):
           print("It works - new user crested: welcome \(data.user.email ?? "")")
-          self.navigateToTabView()
+          self?.createDatabaseUser(authDataResult: data)
+          self?.navigateToTabView()
         }
       }
     }
@@ -93,6 +102,18 @@ class LogInViewController: UIViewController {
   
   private func navigateToTabView() {
     UIViewController.showViewController(storyboardName: "Main", viewControllerId: "TabBarController")
+    
+  }
+  
+  private func createDatabaseUser(authDataResult: AuthDataResult) {
+    db.createDatabaseUser(authDataResult: authDataResult) { (result) in
+      switch result {
+      case .failure(let error):
+        print("Error: \(error)")
+      case .success:
+        print("it worked - db user created")
+      }
+    }
   }
   
   

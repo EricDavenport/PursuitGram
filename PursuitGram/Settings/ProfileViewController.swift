@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
+import Kingfisher
 
 class ProfileViewController: UIViewController {
   
@@ -17,6 +19,8 @@ class ProfileViewController: UIViewController {
   @IBOutlet weak var emailLabel: UILabel!
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var usernameTextField: UITextField!
+  
+  private let storageService = StorageService()
   
   private lazy var imagePickerController : UIImagePickerController = {
     let ip = UIImagePickerController()
@@ -30,12 +34,12 @@ class ProfileViewController: UIViewController {
     }
   }
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      self.userImageView.roundView()
-   updateUI()
-    }
-    
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.userImageView.roundView()
+    updateUI()
+  }
+  
   @IBAction func updateButtonPressed(_ sender: UIButton) {
     
     guard let displayName = usernameTextField.text,
@@ -46,13 +50,33 @@ class ProfileViewController: UIViewController {
     }
     
     guard let user = Auth.auth().currentUser else { return }
-
+    
     let resizedImage = UIImage.resizeImage(originalImage: profileImage, rect: userImageView.bounds)
     
-    print("Photo Saved")
-    showAlert(title: "Success", message: "Profile updated")
+    storageService.uploadPhoto(userEmail: user.email, itemId: nil, image: resizedImage) { (result) in
+      switch result {
+      case .failure(let error):
+        DispatchQueue.main.async {
+          self.showAlert(title: "Error", message: "Unable to save photo: \(error)")
+        }
+      case .success(let url):
+        let request = Auth.auth().currentUser?.createProfileChangeRequest()
+        request?.displayName = displayName
+        request?.photoURL = url
+        request?.commitChanges(completion: { [unowned self] (error) in
+          if let error = error {
+            DispatchQueue.main.async {
+              self.showAlert(title: "Error updating profile", message: "Error: \(error)")
+            }
+          } else {
+            DispatchQueue.main.async {
+              self.showAlert(title: "Profile updated", message: "Profile successfully updated")
+            }
+          }
+        })
+      }
+    }
     
-
   }
   
   
@@ -89,11 +113,13 @@ class ProfileViewController: UIViewController {
     userImageView.roundView()
     guard let user = Auth.auth().currentUser else { return }
     emailLabel.text = user.email
+    userImageView.kf.setImage(with: user.photoURL)
+    usernameTextField.text = user.displayName
   }
   
-
-
-
+  
+  
+  
 }
 
 
@@ -105,5 +131,12 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
     profileImage = image
     dismiss(animated: true)
     
+  }
+}
+
+extension ProfileViewController : UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
   }
 }

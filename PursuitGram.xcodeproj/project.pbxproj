@@ -7,17 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5854A3872415A97C001EE3FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3862415A97C001EE3FC /* GoogleService-Info.plist */; };
 		5854A38A2415B5CF001EE3FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3892415B5CF001EE3FC /* Main.storyboard */; };
 		5854A38D2415DE98001EE3FC /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */; };
 		5854A3902415E089001EE3FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38F2415E089001EE3FC /* ProfileViewController.swift */; };
 		5854A3922415E181001EE3FC /* mainFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A3912415E181001EE3FC /* mainFeedCell.swift */; };
 		5854A3952415E6B8001EE3FC /* UIViewControllers+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */; };
+		5857BBE12416E1590075D318 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5857BBE02416E1590075D318 /* DatabaseService.swift */; };
+		5857BBE42416E4080075D318 /* CreateItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5857BBE32416E4080075D318 /* CreateItemController.swift */; };
+		589DDE14246480C3009D1435 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 589DDE13246480C3009D1435 /* GoogleService-Info.plist */; };
+		589DDE1724648A49009D1435 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589DDE1624648A49009D1435 /* Post.swift */; };
 		58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */; };
 		58E2C5CE24160A7300FB5981 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E2C5CD24160A7300FB5981 /* TabBarController.swift */; };
 		58E58FDA2416841300DB61AD /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FD92416841300DB61AD /* UIImage+Extensions.swift */; };
 		58E58FDC2416870200DB61AD /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */; };
 		58E58FDE2416889000DB61AD /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */; };
+		58E58FE024168D6E00DB61AD /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E58FDF24168D6E00DB61AD /* StorageServices.swift */; };
 		58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */; };
 		58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */; };
 		58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F39CF9241560AB00D6C1C6 /* LogInViewController.swift */; };
@@ -42,17 +46,21 @@
 /* Begin PBXFileReference section */
 		2D5678D8FB677B4312E99746 /* Pods_PursuitGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PursuitGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D2D6D15956613D86C14673 /* Pods-PursuitGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitGram/Pods-PursuitGram.release.xcconfig"; sourceTree = "<group>"; };
-		5854A3862415A97C001EE3FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5854A3892415B5CF001EE3FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		5854A38F2415E089001EE3FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5854A3912415E181001EE3FC /* mainFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainFeedCell.swift; sourceTree = "<group>"; };
 		5854A3942415E6B8001EE3FC /* UIViewControllers+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewControllers+Navigation.swift"; sourceTree = "<group>"; };
+		5857BBE02416E1590075D318 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		5857BBE32416E4080075D318 /* CreateItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateItemController.swift; sourceTree = "<group>"; };
+		589DDE13246480C3009D1435 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		589DDE1624648A49009D1435 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		58E2C5CD24160A7300FB5981 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		58E58FD92416841300DB61AD /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		58E58FDF24168D6E00DB61AD /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		58F39CF2241560AB00D6C1C6 /* PursuitGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PursuitGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F39CF5241560AB00D6C1C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58F39CF7241560AB00D6C1C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,10 +145,28 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5857BBE22416E3B50075D318 /* CreateItem */ = {
+			isa = PBXGroup;
+			children = (
+				5857BBE32416E4080075D318 /* CreateItemController.swift */,
+			);
+			path = CreateItem;
+			sourceTree = "<group>";
+		};
+		589DDE1524648A2E009D1435 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				589DDE1624648A49009D1435 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		58D8ED572415A6010086DA59 /* Firebase Services */ = {
 			isa = PBXGroup;
 			children = (
 				58D8ED582415A61D0086DA59 /* AuthenticationSession.swift */,
+				58E58FDF24168D6E00DB61AD /* StorageServices.swift */,
+				5857BBE02416E1590075D318 /* DatabaseService.swift */,
 			);
 			path = "Firebase Services";
 			sourceTree = "<group>";
@@ -180,14 +206,16 @@
 			isa = PBXGroup;
 			children = (
 				5854A3892415B5CF001EE3FC /* Main.storyboard */,
+				589DDE1524648A2E009D1435 /* Models */,
+				5857BBE22416E3B50075D318 /* CreateItem */,
 				5854A38E2415E06B001EE3FC /* Settings */,
 				5854A38B2415DE72001EE3FC /* MainFeed */,
 				58D8ED572415A6010086DA59 /* Firebase Services */,
 				5854A3882415AA5E001EE3FC /* Log In */,
 				5854A3932415E656001EE3FC /* Supporting Files */,
 				58E58FD8241683CE00DB61AD /* Extensions */,
-				5854A3862415A97C001EE3FC /* GoogleService-Info.plist */,
 				58F39D03241560AC00D6C1C6 /* Info.plist */,
+				589DDE13246480C3009D1435 /* GoogleService-Info.plist */,
 			);
 			path = PursuitGram;
 			sourceTree = "<group>";
@@ -298,7 +326,7 @@
 			files = (
 				58F39D02241560AC00D6C1C6 /* LaunchScreen.storyboard in Resources */,
 				5854A38A2415B5CF001EE3FC /* Main.storyboard in Resources */,
-				5854A3872415A97C001EE3FC /* GoogleService-Info.plist in Resources */,
+				589DDE14246480C3009D1435 /* GoogleService-Info.plist in Resources */,
 				58F39CFF241560AC00D6C1C6 /* Assets.xcassets in Resources */,
 				58F39CFD241560AB00D6C1C6 /* LoginViewController.storyboard in Resources */,
 			);
@@ -385,11 +413,15 @@
 				5854A3952415E6B8001EE3FC /* UIViewControllers+Navigation.swift in Sources */,
 				58E58FDC2416870200DB61AD /* UIViewController+Alerts.swift in Sources */,
 				5854A3922415E181001EE3FC /* mainFeedCell.swift in Sources */,
+				5857BBE42416E4080075D318 /* CreateItemController.swift in Sources */,
 				58F39CFA241560AB00D6C1C6 /* LogInViewController.swift in Sources */,
 				58E2C5CE24160A7300FB5981 /* TabBarController.swift in Sources */,
+				58E58FE024168D6E00DB61AD /* StorageServices.swift in Sources */,
 				5854A38D2415DE98001EE3FC /* MainFeedViewController.swift in Sources */,
 				58E58FDE2416889000DB61AD /* UIImageView+Extensions.swift in Sources */,
+				5857BBE12416E1590075D318 /* DatabaseService.swift in Sources */,
 				58F39CF6241560AB00D6C1C6 /* AppDelegate.swift in Sources */,
+				589DDE1724648A49009D1435 /* Post.swift in Sources */,
 				58D8ED592415A61D0086DA59 /* AuthenticationSession.swift in Sources */,
 				58E58FDA2416841300DB61AD /* UIImage+Extensions.swift in Sources */,
 				58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */,

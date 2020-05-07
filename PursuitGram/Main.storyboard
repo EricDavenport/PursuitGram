@@ -18,9 +18,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="j2H-j9-oPy" kind="relationship" relationship="viewControllers" id="z80-Je-Vh9"/>
                         <segue destination="XTc-1I-6CG" kind="relationship" relationship="viewControllers" id="dKs-Kf-FY1"/>
                         <segue destination="3j4-EE-DVV" kind="relationship" relationship="viewControllers" id="jAF-ce-m7b"/>
+                        <segue destination="j2H-j9-oPy" kind="relationship" relationship="viewControllers" id="z80-Je-Vh9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MeV-dx-TaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,21 +102,58 @@
             </objects>
             <point key="canvasLocation" x="352" y="992"/>
         </scene>
-        <!--Detail-->
+        <!--Create-->
         <scene sceneID="mei-7p-puE">
             <objects>
-                <viewController id="3j4-EE-DVV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateItemController" id="3j4-EE-DVV" customClass="CreateItemController" customModule="PursuitGram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YuU-fA-1cO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1Vu-7R-xol">
+                                <rect key="frame" x="0.0" y="64" width="414" height="414"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="414" id="8R6-wQ-std"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVq-vt-dqR">
+                                <rect key="frame" x="356" y="770" width="31" height="30"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postButtonPressed:" destination="3j4-EE-DVV" eventType="touchUpInside" id="8WR-BL-FDu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgR-wm-0WD">
+                                <rect key="frame" x="38" y="504" width="338" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1Vu-7R-xol" firstAttribute="centerX" secondItem="zgR-wm-0WD" secondAttribute="centerX" id="644-2D-883"/>
+                            <constraint firstItem="bk1-iS-pSM" firstAttribute="bottom" secondItem="MVq-vt-dqR" secondAttribute="bottom" constant="13" id="9NC-Dv-cPt"/>
+                            <constraint firstItem="1Vu-7R-xol" firstAttribute="leading" secondItem="bk1-iS-pSM" secondAttribute="leading" id="MYA-vM-yCw"/>
+                            <constraint firstItem="1Vu-7R-xol" firstAttribute="centerX" secondItem="YuU-fA-1cO" secondAttribute="centerX" id="UOx-pj-lIR"/>
+                            <constraint firstItem="zgR-wm-0WD" firstAttribute="top" secondItem="1Vu-7R-xol" secondAttribute="bottom" constant="26" id="dSb-Q8-bXC"/>
+                            <constraint firstItem="zgR-wm-0WD" firstAttribute="leading" secondItem="bk1-iS-pSM" secondAttribute="leading" constant="38" id="ndR-m0-Bt1"/>
+                            <constraint firstItem="MVq-vt-dqR" firstAttribute="leading" secondItem="bk1-iS-pSM" secondAttribute="leading" constant="356" id="p0n-LD-IDz"/>
+                            <constraint firstItem="1Vu-7R-xol" firstAttribute="top" secondItem="bk1-iS-pSM" secondAttribute="top" constant="20" id="xX3-8F-ScT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bk1-iS-pSM"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Detail" id="Acp-2h-nG5"/>
+                    <tabBarItem key="tabBarItem" title="Create" id="Acp-2h-nG5"/>
+                    <connections>
+                        <outlet property="captionTextField" destination="zgR-wm-0WD" id="bvh-aQ-n5N"/>
+                        <outlet property="userPostImageView" destination="1Vu-7R-xol" id="C2o-iu-VDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9OG-nJ-615" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-517" y="1578"/>
+            <point key="canvasLocation" x="-517.39130434782612" y="1577.6785714285713"/>
         </scene>
         <!--Settings-->
         <scene sceneID="auk-Ws-K0n">

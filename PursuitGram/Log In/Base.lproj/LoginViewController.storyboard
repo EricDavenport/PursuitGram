@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,77 +15,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="171" translatesAutoresizingMaskIntoConstraints="NO" id="UHM-my-vdn">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PursuitGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKG-y7-dXK">
+                                <rect key="frame" x="75" y="119" width="264" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-g1-27b">
+                                <rect key="frame" x="186" y="611.5" width="42" height="30"/>
+                                <state key="normal" title="Log in"/>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAO-cf-Hvq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New User?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWd-Fv-3dP">
+                                <rect key="frame" x="165.5" y="701.5" width="83.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-9t-o9e">
+                                <rect key="frame" x="50" y="210" width="314" height="95"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PursuitGram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKG-y7-dXK">
-                                        <rect key="frame" x="116" y="0.0" width="182" height="41"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="Sc9-9t-o9e">
-                                        <rect key="frame" x="20" y="212" width="374" height="95"/>
-                                        <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-nu-fAn">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKp-TG-9oW">
-                                                <rect key="frame" x="0.0" y="61" width="374" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="OcH-uG-uT2">
-                                        <rect key="frame" x="107" y="478" width="200" height="340"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64Z-g1-27b">
-                                                <rect key="frame" x="35" y="0.0" width="130" height="160.5"/>
-                                                <state key="normal" title="Log in"/>
-                                                <connections>
-                                                    <action selector="logInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAO-cf-Hvq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qne-ms-LV7">
-                                                <rect key="frame" x="81" y="179.5" width="38" height="160.5"/>
-                                                <state key="normal" title="Login"/>
-                                                <connections>
-                                                    <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOK-bn-wqg"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="64Z-g1-27b" secondAttribute="trailing" constant="35" id="4xG-L7-POk"/>
-                                            <constraint firstAttribute="width" constant="200" id="HbF-d2-HE9"/>
-                                            <constraint firstItem="64Z-g1-27b" firstAttribute="leading" secondItem="OcH-uG-uT2" secondAttribute="leading" constant="35" id="w3a-T0-MJw"/>
-                                        </constraints>
-                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-nu-fAn">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HKp-TG-9oW">
+                                        <rect key="frame" x="0.0" y="61" width="314" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="password"/>
+                                    </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="Sc9-9t-o9e" firstAttribute="top" secondItem="LKG-y7-dXK" secondAttribute="bottom" constant="171" id="Auw-eZ-UBS"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sc9-9t-o9e" secondAttribute="trailing" constant="20" id="MFz-tB-DLc"/>
-                                    <constraint firstItem="Sc9-9t-o9e" firstAttribute="leading" secondItem="UHM-my-vdn" secondAttribute="leading" constant="20" id="QoK-5b-wqd"/>
-                                    <constraint firstItem="OcH-uG-uT2" firstAttribute="top" secondItem="UHM-my-vdn" secondAttribute="top" constant="478" id="Ud6-To-v9A"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qne-ms-LV7">
+                                <rect key="frame" x="167" y="732" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="hJQ-Ph-64q"/>
+                                </constraints>
+                                <state key="normal" title="press here"/>
+                                <connections>
+                                    <action selector="createAccountButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xOK-bn-wqg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UHM-my-vdn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="0.01" id="69N-9V-Llp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UHM-my-vdn" secondAttribute="trailing" constant="0.01" id="Vej-Fd-yCu"/>
-                            <constraint firstItem="UHM-my-vdn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="0.01" id="fh0-zw-mHf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UHM-my-vdn" secondAttribute="bottom" constant="0.01" id="yen-5w-vCP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sc9-9t-o9e" secondAttribute="trailing" constant="50" id="4cb-h3-lDj"/>
+                            <constraint firstItem="LKG-y7-dXK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="8Ov-Zm-rsB"/>
+                            <constraint firstItem="oWd-Fv-3dP" firstAttribute="top" secondItem="64Z-g1-27b" secondAttribute="bottom" constant="60" id="EGH-36-hwU"/>
+                            <constraint firstItem="LKG-y7-dXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="GLO-Av-OIk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LKG-y7-dXK" secondAttribute="trailing" constant="75" id="GYj-lk-O8I"/>
+                            <constraint firstItem="64Z-g1-27b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SB9-2w-w24"/>
+                            <constraint firstItem="qne-ms-LV7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VA7-GN-5Ya"/>
+                            <constraint firstItem="Sc9-9t-o9e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="VCT-pQ-G15"/>
+                            <constraint firstItem="oWd-Fv-3dP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bxW-sX-QjB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qne-ms-LV7" secondAttribute="bottom" constant="100" id="guI-Fk-qz6"/>
+                            <constraint firstItem="Sc9-9t-o9e" firstAttribute="top" secondItem="LKG-y7-dXK" secondAttribute="bottom" constant="50" id="uII-F5-2dH"/>
+                            <constraint firstItem="qne-ms-LV7" firstAttribute="top" secondItem="oWd-Fv-3dP" secondAttribute="bottom" constant="10" id="x08-hc-6ww"/>
+                            <constraint firstItem="LKG-y7-dXK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y6A-gJ-FVC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonStack" destination="OcH-uG-uT2" id="k7Y-Cl-woJ"/>
                         <outlet property="createAccountButton" destination="qne-ms-LV7" id="2gv-Ol-h2z"/>
                         <outlet property="emailTextField" destination="G9W-nu-fAn" id="QQI-zx-txO"/>
                         <outlet property="loginButton" destination="64Z-g1-27b" id="qcT-9H-Ikc"/>
+                        <outlet property="loginLabel" destination="oWd-Fv-3dP" id="dWz-Hr-XdI"/>
                         <outlet property="passwordTextField" destination="HKp-TG-9oW" id="ayp-zn-ydk"/>
                     </connections>
                 </viewController>
