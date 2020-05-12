@@ -13,7 +13,7 @@ class StorageService {
   
   private let storRef = Storage.storage().reference()
   
-  public func uploadPhoto(userEmail: String? = nil, itemId: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()) {
+  public func uploadPhoto(userEmail: String? = nil, docID: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()) {
     guard let imageData = image.jpegData(compressionQuality: 1.0) else {
       return
     }
@@ -23,7 +23,7 @@ class StorageService {
     if let userEmail  = userEmail {
       photoReference = storRef.child("UserProfilePhotos/\(userEmail).jpg")
       print("Saved with email")
-    } else if let itemId = itemId {
+    } else if let itemId = docID {
       photoReference = storRef.child("UserProfilePhotos/\(itemId).jpg")
       print("Saved with item ID")
     }

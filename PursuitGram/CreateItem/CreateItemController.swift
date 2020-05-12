@@ -55,11 +55,14 @@ class CreateItemController: UIViewController {
         return
     }
     
-    guard let displayName = Auth.auth().currentUser?.displayName else { return }
+    guard let displayName = Auth.auth().currentUser?.displayName else {
+      print("no display name")
+      return
+    }
     
     let resizedImage = UIImage.resizeImage(originalImage: postedImage, rect: userPostImageView.bounds)
     
-    dbServices.createPost(imageURL: "resizedImage", caption: caption, displayName: displayName) { [weak self] (result) in
+    dbServices.createPost(caption: caption, displayName: displayName) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {
@@ -68,8 +71,8 @@ class CreateItemController: UIViewController {
         print("fail")
       case .success(let docID):
         self?.uploadPhoto(image: resizedImage, documentID: docID)
-        print("success")
-        self?.showAlert(title: "Success", message: "Post created - \(docID)")
+        print("success - doc created with \(docID)")
+//        self?.showAlert(title: "Success", message: "Post created - \(docID)")
       }
     }
     
@@ -98,7 +101,8 @@ class CreateItemController: UIViewController {
   }
   
   private func uploadPhoto(image: UIImage, documentID: String) {
-    storageService.uploadPhoto(image: image) { [weak self] (result) in
+    guard let user = Auth.auth().currentUser else { return }
+    storageService.uploadPhoto(userEmail: user.email, docID: documentID, image: image) { [weak self] (result) in
       switch result {
       case .failure(let error):
         self?.showAlert(title: "Error", message: "\(error.localizedDescription)")

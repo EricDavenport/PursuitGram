@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController {
     
     let resizedImage = UIImage.resizeImage(originalImage: profileImage, rect: userImageView.bounds)
     
-    storageService.uploadPhoto(userEmail: user.email, itemId: nil, image: resizedImage) { (result) in
+    storageService.uploadPhoto(userEmail: user.email, docID: nil, image: resizedImage) { (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {

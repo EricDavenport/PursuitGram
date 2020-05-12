@@ -17,13 +17,13 @@ class DatabaseService {
   
   private let db = Firestore.firestore()
   
-  public func createPost(imageURL: String, caption: String, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
+  public func createPost(caption: String, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
     print("create post func inside")
     guard let user = Auth.auth().currentUser else { return }
     
     let documentRef = db.collection(DatabaseService.itemCollection).document()
     
-    db.collection(DatabaseService.itemCollection).document(documentRef.documentID).setData(["imageURL": imageURL, "caption": caption, "displayName": displayName, "itemID": documentRef.documentID, "listedDate": Timestamp(date: Date()), "userID": user.uid]) { (error) in
+    db.collection(DatabaseService.itemCollection).document(documentRef.documentID).setData(["caption": caption, "displayName": displayName, "itemID": documentRef.documentID, "listedDate": Timestamp(date: Date()), "userID": user.uid]) { (error) in
       if let error = error {
         print("fail - db service")
         completion(.failure(error))
