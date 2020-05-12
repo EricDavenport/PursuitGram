@@ -15,6 +15,7 @@ struct Post {
   let caption: String
   let displayName: String
   let date: Timestamp
+  let postURL: String
 }
 
 extension Post {
@@ -24,13 +25,7 @@ extension Post {
     self.caption = dictionary["caption"] as? String ?? "No caption"
     self.displayName = dictionary["displayName"] as? String ?? "No display name"
     self.date = dictionary["postDate"] as? Timestamp ?? Timestamp(date: Date())
+    self.postURL = dictionary["postURL"] as? String ?? "no image url"
 
   }
 }
-
-/* "caption": caption,
- "displayName": displayName,
- "itemID": documentRef.documentID,
- "listedDate": Timestamp(date: Date()),
- "userID": user.uid]) { (error) in
-*/

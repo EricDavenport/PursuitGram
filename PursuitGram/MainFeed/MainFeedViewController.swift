@@ -43,7 +43,7 @@ class MainFeedViewController: UIViewController {
   private func collectionViewSetup() {
     mainFeedCollection.delegate = self
     mainFeedCollection.dataSource = self
-    
+    mainFeedCollection.register(MainFeedCell.self, forCellWithReuseIdentifier: "postCell")
   }
   
   private func listenerSetup() {
@@ -71,7 +71,11 @@ extension MainFeedViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath)
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCell", for: indexPath) as? MainFeedCell else {
+      fatalError("unable to downcast MainFeedCell")
+    }
+    let post = posts[indexPath.row]
+    cell.configCell(for: post)
     cell.backgroundColor = .magenta
     return cell
   }
@@ -85,3 +89,11 @@ extension MainFeedViewController: UICollectionViewDelegateFlowLayout {
     return itemSize
   }
 }
+
+/*
+ {
+   let maxWidth: CGFloat = UIScreen.main.bounds.size.width
+   let itemWidth: CGFloat = maxWidth * 0.80
+   return CGSize(width: itemWidth, height: itemWidth)
+ }
+ */

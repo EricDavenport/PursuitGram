@@ -71,13 +71,29 @@ class CreateItemController: UIViewController {
         print("fail")
       case .success(let docID):
         self?.uploadPhoto(image: resizedImage, documentID: docID)
+        //        self?.addPostURL(<#T##url: URL##URL#>, postID: <#T##String#>)
         print("success - doc created with \(docID)")
-//        self?.showAlert(title: "Success", message: "Post created - \(docID)")
+        //        self?.showAlert(title: "Success", message: "Post created - \(docID)")
       }
     }
-    
-    
   }
+  
+  
+  //  private func addPostURL(_ url: URL, postID: String) {
+  //    Firestore.firestore().collection(DatabaseService.itemCollection).document(postID).updateData(["postURL": url.absoluteString]) { [weak self] (error) in
+  //      if let error = error {
+  //        DispatchQueue.main.async {
+  //          self?.showAlert(title: "Failed to save photo", message: "\(error.localizedDescription)")
+  //        }
+  //      } else {
+  //        print("photo added to post")
+  //        DispatchQueue.main.async {
+  //          self?.captionTextField.text = ""
+  //          self?.userPostImageView.image = UIImage(systemName: "photo")
+  //        }
+  //      }
+  //    }
+  //  }
   
   @objc private func showPhotoOptions() {
     let alertController = UIAlertController(title: "Choose Photo Option", message: nil, preferredStyle: .actionSheet)
@@ -121,7 +137,11 @@ class CreateItemController: UIViewController {
       } else {
         DispatchQueue.main.async {
           self?.showAlert(title: "Success", message: "Posted to feed")
-          self?.dismiss(animated: true)
+//        self?.dismiss(animated: true)
+          DispatchQueue.main.async {
+            self?.captionTextField.text = ""
+            self?.userPostImageView.image = UIImage(systemName: "photo")
+          }
         }
       }
     }
