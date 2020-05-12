@@ -15,7 +15,7 @@ struct Post {
   let caption: String
   let displayName: String
   let date: Timestamp
-  let postURL: String
+  let imageURL: String
 }
 
 extension Post {
@@ -25,7 +25,7 @@ extension Post {
     self.caption = dictionary["caption"] as? String ?? "No caption"
     self.displayName = dictionary["displayName"] as? String ?? "No display name"
     self.date = dictionary["postDate"] as? Timestamp ?? Timestamp(date: Date())
-    self.postURL = dictionary["postURL"] as? String ?? "no image url"
+    self.imageURL = dictionary["imageURL"] as? String ?? "no image url"
 
   }
 }

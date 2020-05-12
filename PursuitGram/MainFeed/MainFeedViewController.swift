@@ -43,7 +43,6 @@ class MainFeedViewController: UIViewController {
   private func collectionViewSetup() {
     mainFeedCollection.delegate = self
     mainFeedCollection.dataSource = self
-    mainFeedCollection.register(MainFeedCell.self, forCellWithReuseIdentifier: "postCell")
   }
   
   private func listenerSetup() {
@@ -77,6 +76,7 @@ extension MainFeedViewController: UICollectionViewDataSource {
     let post = posts[indexPath.row]
     cell.configCell(for: post)
     cell.backgroundColor = .magenta
+    cell.delegate = self
     return cell
   }
   
@@ -90,10 +90,12 @@ extension MainFeedViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
-/*
- {
-   let maxWidth: CGFloat = UIScreen.main.bounds.size.width
-   let itemWidth: CGFloat = maxWidth * 0.80
-   return CGSize(width: itemWidth, height: itemWidth)
- }
- */
+extension MainFeedViewController: FeedCellDelegate {
+  func cellPostAssigned(_ feedCell: MainFeedCell, post: Post) {
+//    feedCell.configCell(for: post)
+  }
+  
+  
+}
+
+
