@@ -77,6 +77,8 @@ extension MainFeedViewController: UICollectionViewDataSource {
     cell.configCell(for: post)
     cell.backgroundColor = .magenta
     cell.delegate = self
+    cell.didSelectDelegate = self
+    
     return cell
   }
   
@@ -88,11 +90,53 @@ extension MainFeedViewController: UICollectionViewDelegateFlowLayout {
     let itemSize = CGSize(width: 200, height: 200)
     return itemSize
   }
+  
+//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    let post = posts[indexPath.row]
+//    print(post.date)
+//    
+//  }
+  
+  /*
+      let podcast = podcasts[indexPath.row]
+       print(podcast.collectionName)
+       
+       // segue to the PodcastDetailController
+       // access the PodcastDetailController from storyboard
+       
+       // make sure that the stodyboard id is set for the PodcastDetailController
+       let podcastDetailStoryboard = UIStoryboard(name: "PodcastDetail", bundle: nil)
+       guard let podcastDetailController = podcastDetailStoryboard.instantiateViewController(identifier: "PodcastDetailController") as? PodcastDetailController else {
+         fatalError("failed to downcast to PodcastDetailController")
+       }
+       podcastDetailController.podcasts = podcast
+       // in the coming weeks or next week - we will pass datat using initializers / dependency injection e.g PodcatDetailController(podcast: podcast)
+       navigationController?.pushViewController(podcastDetailController, animated: true)
+       
+       //show(pocastDetailController, sender: nil
+     }
+   }
+
+
+
+   */
 }
 
 extension MainFeedViewController: FeedCellDelegate {
   func cellPostAssigned(_ feedCell: MainFeedCell, post: Post) {
 //    feedCell.configCell(for: post)
+  }
+  
+  func didSelectPost(_ feedCell: MainFeedCell, post: Post) {
+    print("delegate active")
+    guard let indexPath = mainFeedCollection.indexPath(for: feedCell) else { return }
+    let post = posts[indexPath.row]
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let detailController = storyboard.instantiateViewController(identifier: "DetailViewController") { (coder) in
+      return DetailViewController(coder: coder, post: post)
+    }
+    
+    present(detailController, animated: true)
   }
   
   

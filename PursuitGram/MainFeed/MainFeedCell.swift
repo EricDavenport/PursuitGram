@@ -12,15 +12,23 @@ import Firebase
 
 protocol FeedCellDelegate: AnyObject {
   func cellPostAssigned(_ feedCell: MainFeedCell, post: Post)
+  func didSelectPost(_ feedCell: MainFeedCell, post: Post)
 }
 
 class MainFeedCell: UICollectionViewCell {
   
+  private lazy var tapGesture: UITapGestureRecognizer = {
+    let gesture = UITapGestureRecognizer()
+    gesture.addTarget(self, action: #selector(handleTap(_:)))
+    return gesture
+  }()
   
   @IBOutlet weak var postImageView: UIImageView!
   @IBOutlet weak var postCaptionLabel: UILabel!
   
   weak var delegate: FeedCellDelegate?
+  weak var didSelectDelegate: FeedCellDelegate?
+  
   
   private var currentPost: Post?
   
@@ -30,6 +38,7 @@ class MainFeedCell: UICollectionViewCell {
 //    backgroundColor = .systemRed
 //    postImageView.image = UIImage(systemName: "glasses")
     postCaptionLabel.backgroundColor = .white
+    self.addGestureRecognizer(tapGesture)
   }
   
   public func configCell(for post: Post) {
@@ -43,9 +52,9 @@ class MainFeedCell: UICollectionViewCell {
     
   }
   
-  private func updateUI(imageURL: String, postdate: Timestamp, caption: String) {
-//    postImageView.kf.setImage(with: URL(string: imageURL))
-//    postCaptionLabel.text = "ok"
+  @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+    guard let post = currentPost else { return }
+    delegate?.didSelectPost(self, post: post)
   }
   
   

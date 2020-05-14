@@ -38,47 +38,57 @@ class ProfileViewController: UIViewController {
     super.viewDidLoad()
     self.userImageView.roundView()
     updateUI()
+    textfieldSetUp()
   }
   
+  private func textfieldSetUp() {
+    usernameTextField.delegate = self
+    emailTextField.delegate = self
+  }
+
   @IBAction func updateButtonPressed(_ sender: UIButton) {
-    
-    guard let displayName = usernameTextField.text,
-      !displayName.isEmpty,
-      let profileImage = profileImage else {
-        showAlert(title: "Missing fields", message: "All fields required:/nUser profile photo/nUsername")
-        return
-    }
-    
-    guard let user = Auth.auth().currentUser else { return }
-    
-    let resizedImage = UIImage.resizeImage(originalImage: profileImage, rect: userImageView.bounds)
-    
-    storageService.uploadPhoto(userEmail: user.email, docID: nil, image: resizedImage) { (result) in
-      switch result {
-      case .failure(let error):
-        DispatchQueue.main.async {
-          self.showAlert(title: "Error", message: "Unable to save photo: \(error)")
-        }
-      case .success(let url):
-        let request = Auth.auth().currentUser?.createProfileChangeRequest()
-        request?.displayName = displayName
-        request?.photoURL = url
-        request?.commitChanges(completion: { [unowned self] (error) in
-          if let error = error {
-            DispatchQueue.main.async {
-              self.showAlert(title: "Error updating profile", message: "Error: \(error)")
-            }
-          } else {
-            DispatchQueue.main.async {
-              self.showAlert(title: "Profile updated", message: "Profile successfully updated")
-            }
-          }
-        })
-      }
-    }
-    
+    update()
   }
   
+  
+  private func update() {
+      
+      print("update pressed")
+      guard let displayName = usernameTextField.text,
+        !displayName.isEmpty,
+        let profileImage = profileImage else {
+          showAlert(title: "Missing fields", message: "All fields required:/nUser profile photo/nUsername")
+          return
+      }
+      
+      guard let user = Auth.auth().currentUser else { return }
+      
+      let resizedImage = UIImage.resizeImage(originalImage: profileImage, rect: userImageView.bounds)
+      
+      storageService.uploadPhoto(userEmail: user.email, docID: nil, image: resizedImage) { (result) in
+        switch result {
+        case .failure(let error):
+          DispatchQueue.main.async {
+            self.showAlert(title: "Error", message: "Unable to save photo: \(error)")
+          }
+        case .success(let url):
+          let request = Auth.auth().currentUser?.createProfileChangeRequest()
+          request?.displayName = displayName
+          request?.photoURL = url
+          request?.commitChanges(completion: { [unowned self] (error) in
+            if let error = error {
+              DispatchQueue.main.async {
+                self.showAlert(title: "Error updating profile", message: "Error: \(error)")
+              }
+            } else {
+              DispatchQueue.main.async {
+                self.showAlert(title: "Profile updated", message: "Profile successfully updated")
+              }
+            }
+          })
+        }
+      }
+  }
   
   @IBAction func editButtonPressed(_ sender: UIButton) {
     
@@ -137,6 +147,7 @@ extension ProfileViewController : UIImagePickerControllerDelegate, UINavigationC
 extension ProfileViewController : UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
+    update()
     return true
   }
 }

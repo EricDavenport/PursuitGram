@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5826FBF0246D427E0030770D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826FBEF246D427E0030770D /* DetailViewController.swift */; };
+		5826FBF2246D4D720030770D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5826FBF1246D4D720030770D /* Date+Extension.swift */; };
 		5854A38A2415B5CF001EE3FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5854A3892415B5CF001EE3FC /* Main.storyboard */; };
 		5854A38D2415DE98001EE3FC /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */; };
 		5854A3902415E089001EE3FC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5854A38F2415E089001EE3FC /* ProfileViewController.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		2D5678D8FB677B4312E99746 /* Pods_PursuitGram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PursuitGram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D2D6D15956613D86C14673 /* Pods-PursuitGram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PursuitGram.release.xcconfig"; path = "Target Support Files/Pods-PursuitGram/Pods-PursuitGram.release.xcconfig"; sourceTree = "<group>"; };
+		5826FBEF246D427E0030770D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		5826FBF1246D4D720030770D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		5854A3892415B5CF001EE3FC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		5854A38C2415DE98001EE3FC /* MainFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		5854A38F2415E089001EE3FC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 				9A512C9E1E7E7889C17697BA /* Pods_PursuitGramTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5826FBEE246D42590030770D /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				5826FBEF246D427E0030770D /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		5854A3882415AA5E001EE3FC /* Log In */ = {
@@ -178,6 +190,7 @@
 				58E58FD92416841300DB61AD /* UIImage+Extensions.swift */,
 				58E58FDB2416870200DB61AD /* UIViewController+Alerts.swift */,
 				58E58FDD2416889000DB61AD /* UIImageView+Extensions.swift */,
+				5826FBF1246D4D720030770D /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				5854A3892415B5CF001EE3FC /* Main.storyboard */,
+				5826FBEE246D42590030770D /* DetailView */,
 				589DDE1524648A2E009D1435 /* Models */,
 				5857BBE22416E3B50075D318 /* CreateItem */,
 				5854A38E2415E06B001EE3FC /* Settings */,
@@ -411,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5854A3952415E6B8001EE3FC /* UIViewControllers+Navigation.swift in Sources */,
+				5826FBF0246D427E0030770D /* DetailViewController.swift in Sources */,
 				58E58FDC2416870200DB61AD /* UIViewController+Alerts.swift in Sources */,
 				5854A3922415E181001EE3FC /* MainFeedCell.swift in Sources */,
 				5857BBE42416E4080075D318 /* CreateItemController.swift in Sources */,
@@ -426,6 +441,7 @@
 				58E58FDA2416841300DB61AD /* UIImage+Extensions.swift in Sources */,
 				58F39CF8241560AB00D6C1C6 /* SceneDelegate.swift in Sources */,
 				5854A3902415E089001EE3FC /* ProfileViewController.swift in Sources */,
+				5826FBF2246D4D720030770D /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
